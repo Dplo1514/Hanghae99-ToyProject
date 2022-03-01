@@ -74,7 +74,6 @@ def delete():  # db에서 user정보 가져오기
     return jsonify({'msg': '삭제완료 되었습니다.'})
 
 # 수정을 누르면 팝업이 뜬다. 팝업창에 입력한 link , 평점 , comment가 변경된 데이터로 저장된다.
-
 # 수정 창 팝업을 띄움과 동시에 num을 받고 num을 리턴해준다
 
 
