@@ -1,6 +1,7 @@
 from main import * #from main import * : main에 선언된 모든 값을 가져온다 , __init__ file에 선언된 라이브러리를 가져와 사용할 수 있음.
 from flask import Flask, Blueprint, flash, render_template, request, url_for, jsonify, redirect, session
 from pymongo import MongoClient
+from main import main
 
 app = Flask(__name__)
 #객체 = Blueprint("name" , __name__ , url_prefix="") : (이름, 모듈명, URL 프리픽스 값)
@@ -36,7 +37,7 @@ def login_done():
         pw = request.args.get("pw")
         log = loginForm()
         if log.login(uid, pw):
-                return redirect(url_for('main'))
+                return redirect(url_for("main.main_template"))
         else:
                 flash("아이디가 없거나 비밀번호가 틀립니다.")
                 return render_template("login.html")
